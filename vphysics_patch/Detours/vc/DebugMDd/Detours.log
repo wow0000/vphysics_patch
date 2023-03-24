@@ -1,0 +1,365 @@
+﻿  
+  Microsoft (R) Program Maintenance Utility Version 14.32.31329.0
+  Copyright (C) Microsoft Corporation. Tous droits r�serv�s.
+  
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master"
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\src"
+   Created ..\include
+   Created ..\lib.X86
+   Created ..\bin.X86
+   Created obj.X86
+  	cl /nologo /W4 /WX /we4777 /we4800 /Zi /MT /Gy /Gm- /Zl /Od /DDETOUR_DEBUG=0 /DWIN32_LEAN_AND_MEAN /D_WIN32_WINNT=0x501 /Fd..\lib.X86\detours.pdb /Foobj.X86\ /c detours.cpp modules.cpp disasm.cpp image.cpp creatwth.cpp disolx86.cpp disolx64.cpp disolia64.cpp disolarm.cpp disolarm64.cpp 
+  detours.cpp
+  modules.cpp
+  disasm.cpp
+  image.cpp
+  creatwth.cpp
+  disolx86.cpp
+  disolx64.cpp
+  disolia64.cpp
+  disolarm.cpp
+  disolarm64.cpp
+  Génération de code en cours...
+  	link /lib /out:..\lib.X86\detours.lib /nologo obj.X86\detours.obj      obj.X86\modules.obj      obj.X86\disasm.obj       obj.X86\image.obj        obj.X86\creatwth.obj     obj.X86\disolx86.obj     obj.X86\disolx64.obj     obj.X86\disolia64.obj    obj.X86\disolarm.obj     obj.X86\disolarm64.obj
+  	copy detours.h ..\include\detours.h
+          1 fichier(s) copié(s).
+  	copy detver.h ..\include\detver.h
+          1 fichier(s) copié(s).
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples"
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\syelog"
+   Created obj.X86
+  	copy syelog.h ..\..\include\syelog.h
+          1 fichier(s) copié(s).
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c syelog.cpp 
+  syelog.cpp
+  	link /lib /nologo /out:..\..\lib.X86\syelog.lib obj.X86\syelog.obj
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c syelogd.cpp 
+  syelogd.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\syelogd.exe /Fd..\..\bin.X86\syelogd.pdb obj.X86\syelogd.obj  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ws2_32.lib mswsock.lib advapi32.lib
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c sltest.cpp 
+  sltest.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\sltest.exe /Fd..\..\bin.X86\sltest.pdb obj.X86\sltest.obj  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c sltestp.cpp 
+  sltestp.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\sltestp.exe /Fd..\..\bin.X86\sltestp.pdb obj.X86\sltestp.obj  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\simple"
+   Created obj.X86
+  	rc /nologo /DDETOURS_BITS=32 /foobj.X86\simple.res /i..\..\include simple.rc
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c simple.cpp 
+  simple.cpp
+  	cl /LD /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\simple32.dll /Fd..\..\bin.X86\simple32.pdb  obj.X86\simple.obj obj.X86\simple.res  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib /subsystem:console  /export:DetourFinishHelperProcess,@1,NONAME  /export:TimedSleepEx  ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib
+     Création de la bibliothèque ..\..\bin.X86\simple32.lib et de l'objet ..\..\bin.X86\simple32.exp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c sleep5.cpp 
+  sleep5.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\sleep5.exe /Fd..\..\bin.X86\sleep5.pdb obj.X86\sleep5.obj  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib  /subsystem:console
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\simple_safe"
+   Created obj.X86
+  	rc /nologo /DDETOURS_BITS=32 /foobj.X86\simple_safe.res /i..\..\include simple_safe.rc
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /std:c++14 /Fdobj.X86\vc.pdb /Foobj.X86\ /c simple_safe.cpp 
+  simple_safe.cpp
+  	cl /LD /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /std:c++14 /Fe..\..\bin.X86\simple_safe32.dll /Fd..\..\bin.X86\simple_safe32.pdb  obj.X86\simple_safe.obj obj.X86\simple_safe.res  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib /subsystem:console  /export:DetourFinishHelperProcess,@1,NONAME  /export:TimedSleepEx  ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib
+     Création de la bibliothèque ..\..\bin.X86\simple_safe32.lib et de l'objet ..\..\bin.X86\simple_safe32.exp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /std:c++14 /Fdobj.X86\vc.pdb /Foobj.X86\ /c sleep5.cpp 
+  sleep5.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /std:c++14 /Fe..\..\bin.X86\sleep5.exe /Fd..\..\bin.X86\sleep5.pdb obj.X86\sleep5.obj  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib  /subsystem:console
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\slept"
+   Created obj.X86
+  	rc /nologo /DDETOURS_BITS=32 /foobj.X86\slept.res /i..\..\include slept.rc
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /O2 /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c slept.cpp 
+  slept.cpp
+  	cl /LD /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /O2 /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\slept32.dll /Fd..\..\bin.X86\slept32.pdb  obj.X86\slept.obj obj.X86\slept.res /link /release /incremental:no /profile /nodefaultlib:oldnames.lib /subsystem:console  /export:DetourFinishHelperProcess,@1,NONAME  /export:TimedSleepEx  /export:UntimedSleepEx  /export:GetSleptTicks  /export:TestTicks  /export:TestTicksEx  ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib
+     Création de la bibliothèque ..\..\bin.X86\slept32.lib et de l'objet ..\..\bin.X86\slept32.exp
+  	rc /nologo /DDETOURS_BITS=32 /foobj.X86\dslept.res /i..\..\include dslept.rc
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /O2 /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c dslept.cpp 
+  dslept.cpp
+  	cl /LD /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /O2 /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\dslept32.dll /Fd..\..\bin.X86\dslept32.pdb  obj.X86\dslept.obj obj.X86\dslept.res  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib /subsystem:console  /export:DetourFinishHelperProcess,@1,NONAME  /export:TimedSleepEx  /export:UntimedSleepEx  /export:GetSleptTicks  ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib
+     Création de la bibliothèque ..\..\bin.X86\dslept32.lib et de l'objet ..\..\bin.X86\dslept32.exp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /O2 /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c sleepold.cpp 
+  sleepold.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /O2 /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\sleepold.exe /Fd..\..\bin.X86\sleepold.pdb obj.X86\sleepold.obj  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib  /subsystem:console /fixed:no
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /O2 /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c sleepnew.cpp 
+  sleepnew.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /O2 /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\sleepnew.exe /Fd..\..\bin.X86\sleepnew.pdb obj.X86\sleepnew.obj  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib  /subsystem:console /fixed:no ..\..\bin.X86\slept32.lib
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /O2 /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c sleepbed.cpp 
+  sleepbed.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /O2 /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\sleepbed.exe /Fd..\..\bin.X86\sleepbed.pdb obj.X86\sleepbed.obj  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib  /subsystem:console /fixed:no
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\setdll"
+   Created obj.X86
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c setdll.cpp 
+  setdll.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\setdll.exe /Fd..\..\bin.X86\setdll.pdb obj.X86\setdll.obj  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib /subsystem:console
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\withdll"
+   Created obj.X86
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c withdll.cpp 
+  withdll.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\withdll.exe /Fd..\..\bin.X86\withdll.pdb obj.X86\withdll.obj  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib /subsystem:console
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\cping"
+   Created obj.X86
+  	midl /nologo /Oif /no_format_opt /no_robust /win32 /out obj.X86 /prefix all iping_ /dlldata iping_d.c iping.idl
+  Processing .\iping.idl
+  iping.idl
+  Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\objidl.idl
+  objidl.idl
+  Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\unknwn.idl
+  unknwn.idl
+  Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\wtypes.idl
+  wtypes.idl
+  Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\wtypesbase.idl
+  wtypesbase.idl
+  Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\basetsd.h
+  basetsd.h
+  Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\guiddef.h
+  guiddef.h
+  Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\oaidl.idl
+  oaidl.idl
+  Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\oleidl.idl
+  oleidl.idl
+  Processing C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\oaidl.acf
+  oaidl.acf
+  	cl /nologo /Zi /MT /Gm- /W3 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /D_WIN32_WINNT=0x0400 /Fdobj.X86\vc.pdb  /DCONST_VTABLE  /DCOBJMACROS -DWIN32 -DNT -DENTRY_PREFIX=iping_ -DREGISTER_PROXY_DLL /Iobj.X86 /Foobj.X86\ /c obj.X86\iping_i.c
+  iping_i.c
+  	cl /nologo /Zi /MT /Gm- /W3 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /D_WIN32_WINNT=0x0400 /Fdobj.X86\vc.pdb  /DCONST_VTABLE  /DCOBJMACROS -DWIN32 -DNT -DENTRY_PREFIX=iping_ -DREGISTER_PROXY_DLL /Iobj.X86 /Foobj.X86\ /c obj.X86\iping_p.c
+  iping_p.c
+  	cl /nologo /Zi /MT /Gm- /W3 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /D_WIN32_WINNT=0x0400 /Fdobj.X86\vc.pdb  /DCONST_VTABLE  /DCOBJMACROS -DWIN32 -DNT -DENTRY_PREFIX=iping_ -DREGISTER_PROXY_DLL /Iobj.X86 /Foobj.X86\ /c obj.X86\iping_d.c
+  iping_d.c
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /D_WIN32_WINNT=0x0400 /Fdobj.X86\vc.pdb  /DCONST_VTABLE  /DCOBJMACROS -DWIN32 -DNT  /Iobj.X86 /Foobj.X86\ /c cping.cpp 
+  cping.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /D_WIN32_WINNT=0x0400 /Fdobj.X86\vc.pdb  /DCONST_VTABLE  /DCOBJMACROS -DWIN32 -DNT /Fe..\..\bin.X86\cping.exe obj.X86\cping.obj     obj.X86\iping_i.obj  obj.X86\iping_p.obj  obj.X86\iping_d.obj /link /release /incremental:no /profile /nodefaultlib:oldnames.lib  /subsystem:console ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib  kernel32.lib  user32.lib  shell32.lib  uuid.lib  ole32.lib  rpcrt4.lib  advapi32.lib  wsock32.lib
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\disas"
+   Created obj.X86
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Feobj.X86\disasm.obj /FAcs /Faobj.X86\x86.lst  /Fdobj.X86\disasm.pdb /Foobj.X86\disasm.obj /c x86.cpp
+  x86.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c disas.cpp 
+  disas.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\disas.exe /FAcs /Faobj.X86\disas.lst /Fd..\..\bin.X86\disas.pdb  obj.X86\disas.obj obj.X86\disasm.obj  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib /subsystem:console /entry:WinMainCRTStartup
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\dtest"
+   Created obj.X86
+  	rc /nologo /DDETOURS_BITS=32 /foobj.X86\dtarge.res /i..\..\include dtarge.rc
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c dtarge.cpp 
+  dtarge.cpp
+  	cl /LD /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include  /Fe..\..\bin.X86\dtarge32.dll  /Fd..\..\bin.X86\dtarge32.pdb  obj.X86\dtarge.obj obj.X86\dtarge.res  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib /subsystem:console  /export:Target0  /export:Target1  /export:Target2  /export:Target3  /export:Target4  /export:Target5  /export:Target6  /export:Target7  /export:Target8  /export:Target9  /export:Target10  /export:Target11  /export:Target12  /export:Target13  /export:Target14  /export:Target15  /export:Target16  /export:TargetV  /export:TargetR  ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib
+     Création de la bibliothèque ..\..\bin.X86\dtarge32.lib et de l'objet ..\..\bin.X86\dtarge32.exp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c dtest.cpp 
+  dtest.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\dtest.exe /Fd..\..\bin.X86\dtest.pdb obj.X86\dtest.obj  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib ..\..\bin.X86\dtarge32.lib  /subsystem:console /entry:WinMainCRTStartup
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\dumpe"
+   Created obj.X86
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c dumpe.cpp 
+  dumpe.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\dumpe.exe /Fd..\..\bin.X86\dumpe.pdb obj.X86\dumpe.obj  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib  /subsystem:console
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\dumpi"
+   Created obj.X86
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c dumpi.cpp 
+  dumpi.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\dumpi.exe /Fd..\..\bin.X86\dumpi.pdb obj.X86\dumpi.obj  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib  /subsystem:console
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\echo"
+   Created obj.X86
+  	rc /nologo /DDETOURS_BITS=32 /foobj.X86\echofx.res /i..\..\include echofx.rc
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c main.cpp echonul.cpp 
+  main.cpp
+  echonul.cpp
+  Génération de code en cours...
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Zl /Fe..\..\bin.X86\echonul.exe /Fd..\..\bin.X86\echonul.pdb  obj.X86\main.obj obj.X86\echonul.obj  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib  /export:Echo  /subsystem:console
+     Création de la bibliothèque ..\..\bin.X86\echonul.lib et de l'objet ..\..\bin.X86\echonul.exp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c echofx.cpp 
+  echofx.cpp
+  	cl /LD /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\echofx32.dll /Fd..\..\bin.X86\echofx32.pdb  obj.X86\echofx.obj obj.X86\echofx.res  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib /subsystem:console  /export:DetourFinishHelperProcess,@1,NONAME  /export:Mine_Echo  ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib ..\..\bin.X86\echonul.lib
+     Création de la bibliothèque ..\..\bin.X86\echofx32.lib et de l'objet ..\..\bin.X86\echofx32.exp
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\einst"
+   Created obj.X86
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c edll1x.cpp 
+  edll1x.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\edll1x32.dll /Fd..\..\bin.X86\edll1x32.pdb  obj.X86\edll1x.obj /LD  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib user32.lib  /subsystem:windows  /base:0x7100000
+     Création de la bibliothèque ..\..\bin.X86\edll1x32.lib et de l'objet ..\..\bin.X86\edll1x32.exp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c edll2x.cpp 
+  edll2x.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\edll2x32.dll /Fd..\..\bin.X86\edll2x32.pdb  obj.X86\edll2x.obj /LD  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib user32.lib  /subsystem:console  /base:0x7200000
+     Création de la bibliothèque ..\..\bin.X86\edll2x32.lib et de l'objet ..\..\bin.X86\edll2x32.exp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c edll3x.cpp 
+  edll3x.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\edll3x32.dll /Fd..\..\bin.X86\edll3x32.pdb  obj.X86\edll3x.obj /LD  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib user32.lib  /subsystem:console  /base:0x7300000
+     Création de la bibliothèque ..\..\bin.X86\edll3x32.lib et de l'objet ..\..\bin.X86\edll3x32.exp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c einst.cpp 
+  einst.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\einst.exe /Fd..\..\bin.X86\einst.pdb obj.X86\einst.obj  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib user32.lib  ..\..\bin.X86\edll1x32.lib ..\..\bin.X86\edll2x32.lib ..\..\bin.X86\edll3x32.lib  /subsystem:console /entry:WinMainCRTStartup
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\excep"
+   Created obj.X86
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c excep.cpp firstexc.cpp 
+  excep.cpp
+  firstexc.cpp
+  Génération de code en cours...
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\excep.exe /Fd..\..\bin.X86\excep.pdb obj.X86\excep.obj obj.X86\firstexc.obj  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib /subsystem:console /entry:WinMainCRTStartup
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\comeasy"
+   Created obj.X86
+  	rc /nologo /DDETOURS_BITS=32 /foobj.X86\wrotei.res /i..\..\include wrotei.rc
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c wrotei.cpp 
+  wrotei.cpp
+  	cl /LD /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\wrotei32.dll /Fd..\..\bin.X86\wrotei32.pdb  obj.X86\wrotei.obj obj.X86\wrotei.res  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib /subsystem:console  /export:DetourFinishHelperProcess,@1,NONAME  ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib ole32.lib
+     Création de la bibliothèque ..\..\bin.X86\wrotei32.lib et de l'objet ..\..\bin.X86\wrotei32.exp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c comeasy.cpp 
+  comeasy.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\comeasy.exe /Fd..\..\bin.X86\comeasy.pdb  obj.X86\comeasy.obj  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib ole32.lib  /subsystem:console /fixed:no
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\commem"
+   Created obj.X86
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c commem.cpp 
+  commem.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\commem.exe /Fd..\..\bin.X86\commem.pdb obj.X86\commem.obj  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib ole32.lib /subsystem:console
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\findfunc"
+   Created obj.X86
+  	rc /nologo /DDETOURS_BITS=32 /foobj.X86\target.res /i..\..\include target.rc
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c target.cpp 
+  target.cpp
+  	cl /LD /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\target32.dll /Fd..\..\bin.X86\target32.pdb  obj.X86\target.obj obj.X86\target.res  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib /subsystem:console  /export:Target  /base:0x1900000  ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib
+     Création de la bibliothèque ..\..\bin.X86\target32.lib et de l'objet ..\..\bin.X86\target32.exp
+  	rc /nologo /DDETOURS_BITS=32 /foobj.X86\extend.res /i..\..\include extend.rc
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c extend.cpp 
+  extend.cpp
+  	cl /LD /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\extend32.dll /Fd..\..\bin.X86\extend32.pdb  obj.X86\extend.obj obj.X86\extend.res  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib /subsystem:console  /export:DetourFinishHelperProcess,@1,NONAME  /base:0x1a00000  ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib
+     Création de la bibliothèque ..\..\bin.X86\extend32.lib et de l'objet ..\..\bin.X86\extend32.exp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c findfunc.cpp 
+  findfunc.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\findfunc.exe /Fd..\..\bin.X86\findfunc.pdb obj.X86\findfunc.obj  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib  /subsystem:console /fixed:no ..\..\bin.X86\target32.lib
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c symtest.cpp 
+  symtest.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\symtest.exe /Fd..\..\bin.X86\symtest.pdb obj.X86\symtest.obj  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib  /subsystem:console /fixed:no ..\..\bin.X86\target32.lib
+  	copy "C:\Program Files\Oculus\Support\oculus-runtime\dbghelp.dll" ..\..\bin.X86\dbghelp.dll
+          1 fichier(s) copié(s).
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\member"
+   Created obj.X86
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c member.cpp 
+  member.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\member.exe /Fd..\..\bin.X86\member.pdb obj.X86\member.obj  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib /subsystem:console
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\region"
+   Created obj.X86
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c region.cpp 
+  region.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\region.exe /Fd..\..\bin.X86\region.pdb obj.X86\region.obj  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib /subsystem:console
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\traceapi"
+   Created obj.X86
+  	rc /nologo /DDETOURS_BITS=32 /foobj.X86\trcapi.res /i..\..\include trcapi.rc
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c trcapi.cpp 
+  trcapi.cpp
+  	cl /LD /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\trcapi32.dll /Fd..\..\bin.X86\trcapi32.pdb  obj.X86\trcapi.obj obj.X86\trcapi.res  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib /release /subsystem:console  /export:DetourFinishHelperProcess,@1,NONAME  ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib gdi32.lib user32.lib shell32.lib advapi32.lib ole32.lib ws2_32.lib
+     Création de la bibliothèque ..\..\bin.X86\trcapi32.lib et de l'objet ..\..\bin.X86\trcapi32.exp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c testapi.cpp 
+  testapi.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\testapi.exe /Fd..\..\bin.X86\testapi.pdb obj.X86\testapi.obj  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib gdi32.lib user32.lib shell32.lib advapi32.lib ole32.lib ws2_32.lib  /subsystem:console /fixed:no
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\tracebld"
+   Created obj.X86
+  	rc /nologo /DDETOURS_BITS=32 /foobj.X86\trcbld.res /i..\..\include trcbld.rc
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c trcbld.cpp 
+  trcbld.cpp
+  	cl /LD /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\trcbld32.dll /Fd..\..\bin.X86\trcbld32.pdb  obj.X86\trcbld.obj obj.X86\trcbld.res  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib /release /subsystem:console  /export:DetourFinishHelperProcess,@1,NONAME  ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib
+     Création de la bibliothèque ..\..\bin.X86\trcbld32.lib et de l'objet ..\..\bin.X86\trcbld32.exp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c tracebld.cpp 
+  tracebld.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\tracebld.exe /Fd..\..\bin.X86\tracebld.pdb obj.X86\tracebld.obj  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib  /subsystem:console /fixed:no
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\tracemem"
+   Created obj.X86
+  	rc /nologo /DDETOURS_BITS=32 /foobj.X86\trcmem.res /i..\..\include trcmem.rc
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c trcmem.cpp 
+  trcmem.cpp
+  	cl /LD /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\trcmem32.dll /Fd..\..\bin.X86\trcmem32.pdb  obj.X86\trcmem.obj obj.X86\trcmem.res  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib /subsystem:console  /export:DetourFinishHelperProcess,@1,NONAME  ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib
+     Création de la bibliothèque ..\..\bin.X86\trcmem32.lib et de l'objet ..\..\bin.X86\trcmem32.exp
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\tracereg"
+   Created obj.X86
+  	rc /nologo /DDETOURS_BITS=32 /foobj.X86\trcreg.res /i..\..\include trcreg.rc
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c trcreg.cpp 
+  trcreg.cpp
+  	cl /LD /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\trcreg32.dll /Fd..\..\bin.X86\trcreg32.pdb  obj.X86\trcreg.obj obj.X86\trcreg.res  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib /subsystem:console  /export:DetourFinishHelperProcess,@1,NONAME  ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib advapi32.lib
+     Création de la bibliothèque ..\..\bin.X86\trcreg32.lib et de l'objet ..\..\bin.X86\trcreg32.exp
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\traceser"
+   Created obj.X86
+  	rc /nologo /DDETOURS_BITS=32 /foobj.X86\trcser.res /i..\..\include trcser.rc
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c trcser.cpp 
+  trcser.cpp
+  	cl /LD /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\trcser32.dll /Fd..\..\bin.X86\trcser32.pdb  obj.X86\trcser.obj obj.X86\trcser.res  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib /subsystem:console  /export:DetourFinishHelperProcess,@1,NONAME  ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib
+     Création de la bibliothèque ..\..\bin.X86\trcser32.lib et de l'objet ..\..\bin.X86\trcser32.exp
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\tracessl"
+   Created obj.X86
+  	rc /nologo /DDETOURS_BITS=32 /foobj.X86\trcssl.res /i..\..\include trcssl.rc
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c trcssl.cpp 
+  trcssl.cpp
+  	cl /LD /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\trcssl32.dll /Fd..\..\bin.X86\trcssl32.pdb  obj.X86\trcssl.obj obj.X86\trcssl.res  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib /subsystem:console  /export:DetourFinishHelperProcess,@1,NONAME  ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib ws2_32.lib secur32.lib
+     Création de la bibliothèque ..\..\bin.X86\trcssl32.lib et de l'objet ..\..\bin.X86\trcssl32.exp
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\tracetcp"
+   Created obj.X86
+  	rc /nologo /DDETOURS_BITS=32 /foobj.X86\trctcp.res /i..\..\include trctcp.rc
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c trctcp.cpp 
+  trctcp.cpp
+  	cl /LD /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\trctcp32.dll /Fd..\..\bin.X86\trctcp32.pdb  obj.X86\trctcp.obj obj.X86\trctcp.res  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib /subsystem:console  /export:DetourFinishHelperProcess,@1,NONAME  ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib ws2_32.lib
+     Création de la bibliothèque ..\..\bin.X86\trctcp32.lib et de l'objet ..\..\bin.X86\trctcp32.exp
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\tracelnk"
+  . Created obj.X86
+  	rc /nologo /DDETOURS_BITS=32 /foobj.X86\trclnk.res /i..\..\include trclnk.rc
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c trclnk.cpp 
+  trclnk.cpp
+  	cl /LD /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\trclnk32.dll /Fd..\..\bin.X86\trclnk32.pdb  obj.X86\trclnk.obj obj.X86\trclnk.res  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib /subsystem:console  /export:DetourFinishHelperProcess,@1,NONAME  ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib
+     Création de la bibliothèque ..\..\bin.X86\trclnk32.lib et de l'objet ..\..\bin.X86\trclnk32.exp
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\tryman"
+   Created ..\..\bin.X86
+  	rc /nologo /DDETOURS_BITS=32 /foobj.X86\tstman.res /i..\..\include tstman.rc
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c tstman.cpp 
+  tstman.cpp
+  	cl /LD /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\tstman32.dll /Fd..\..\bin.X86\tstman32.pdb  obj.X86\tstman.obj obj.X86\tstman.res  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib /subsystem:console  /export:DetourFinishHelperProcess,@1,NONAME  /export:Test3264  ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib
+     Création de la bibliothèque ..\..\bin.X86\tstman32.lib et de l'objet ..\..\bin.X86\tstman32.exp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c tryman.cpp 
+  tryman.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\tryman32.exe /Fd..\..\bin.X86\tryman32.pdb obj.X86\tryman.obj  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib ..\..\bin.X86\tstman32.lib  /subsystem:console
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c size.cpp 
+  size.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\size32.exe /Fd..\..\bin.X86\size32.pdb obj.X86\size.obj  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib  /subsystem:console /fixed:no
+  	if not exist ..\..\bin.X86\key.snk sn -k ..\..\bin.X86\key.snk
+  
+  Utilitaire Strong Name Microsoft (R) .NET Framework Version 4.0.30319.0
+  Copyright (c) Microsoft Corporation. Tous droits réservés.
+  
+  Paire de clés écrite dans ..\..\bin.X86\key.snk
+  	csc /nologo /nowarn:1607 /unsafe- /optimize+ /debug+ /warnaserror /platform:x64 /keyfile:..\..\bin.X86\key.snk  /out:..\..\bin.X86\managed-x64.exe managed.cs
+  	csc /nologo /nowarn:1607 /unsafe- /optimize+ /debug+ /warnaserror /platform:itanium /keyfile:..\..\bin.X86\key.snk  /out:..\..\bin.X86\managed-ia64.exe managed.cs
+  	csc /nologo /nowarn:1607 /unsafe- /optimize+ /debug+ /warnaserror /platform:x86 /keyfile:..\..\bin.X86\key.snk  /out:..\..\bin.X86\managed-x86.exe managed.cs
+  	csc /nologo /nowarn:1607 /unsafe- /optimize+ /debug+ /warnaserror /platform:anycpu /keyfile:..\..\bin.X86\key.snk  /out:..\..\bin.X86\managed-any.exe managed.cs
+  	csc /nologo /nowarn:1607 /unsafe- /optimize+ /debug+ /warnaserror /platform:anycpu32bitpreferred /keyfile:..\..\bin.X86\key.snk  /out:..\..\bin.X86\managed-any32.exe managed.cs
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\impmunge"
+   Created obj.X86
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fdobj.X86\vc.pdb /Foobj.X86\ /c impmunge.cpp 
+  impmunge.cpp
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /Fe..\..\bin.X86\impmunge.exe /Fd..\..\bin.X86\impmunge.pdb obj.X86\impmunge.obj  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib imagehlp.lib /subsystem:console
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\dynamic_alloc"
+   Created obj.X86
+  	ml /nologo /Zi /c /Fl /Flobj.X86\x86.lst /Foobj.X86\asm.obj x86.asm
+   Assembling: x86.asm
+  	cl  /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /EHsc /Fdobj.X86\vc.pdb /Foobj.X86\ /c main.cpp 
+  main.cpp
+  	link /SUBSYSTEM:CONSOLE /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib user32.lib /PDB:"..\..\bin.X86\dalloc.pdb" /OUT:"..\..\bin.X86\dalloc.exe" obj.X86\main.obj obj.X86\asm.obj ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib
+  Microsoft (R) Incremental Linker Version 14.32.31329.0
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples\payload"
+   Created obj.X86
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /EHsc /Fdobj.X86\vc.pdb /Foobj.X86\ /c payload.cpp 
+  payload.cpp
+  	link /SUBSYSTEM:CONSOLE /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib /PDB:"..\..\bin.X86\payload.pdb" /OUT:"..\..\bin.X86\payload.exe" obj.X86\payload.obj ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib
+  Microsoft (R) Incremental Linker Version 14.32.31329.0
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\..\include /EHsc /Fdobj.X86\vc.pdb /Foobj.X86\ /c payloadtarget.cpp 
+  payloadtarget.cpp
+  	link /SUBSYSTEM:CONSOLE /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib kernel32.lib /PDB:"..\..\bin.X86\payloadtarget.pdb" /OUT:"..\..\bin.X86\payloadtarget.exe" obj.X86\payloadtarget.obj ..\..\lib.X86\syelog.lib ..\..\lib.X86\detours.lib
+  Microsoft (R) Incremental Linker Version 14.32.31329.0
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\samples"
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master\tests"
+   Created obj.X86
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\include /EHsc /DCATCH_CONFIG_NO_WINDOWS_SEH /Fdobj.X86\vc.pdb /Foobj.X86\ /c main.cpp test_module_api.cpp test_image_api.cpp corruptor.cpp process_helpers.cpp payload.cpp 
+  main.cpp
+  test_module_api.cpp
+  test_image_api.cpp
+  corruptor.cpp
+  process_helpers.cpp
+  payload.cpp
+  Génération de code en cours...
+  	cl /nologo /Zi /MT /Gm- /W4 /WX /we4777 /we4800 /Od /DDETOUR_DEBUG=0 /I..\include /EHsc /DCATCH_CONFIG_NO_WINDOWS_SEH /Fe..\bin.X86\unittests.exe /Fd..\bin.X86\unittests.pdb  obj.X86\main.obj  obj.X86\test_module_api.obj  obj.X86\test_image_api.obj  obj.X86\corruptor.obj  obj.X86\process_helpers.obj  obj.X86\payload.obj  /link /release /incremental:no /profile /nodefaultlib:oldnames.lib ..\lib.X86\detours.lib kernel32.lib rpcrt4.lib /subsystem:console
+     Création de la bibliothèque ..\bin.X86\unittests.lib et de l'objet ..\bin.X86\unittests.exp
+  	cd "C:\Users\wow\source\repos\gmod_dumper\gmod_dumper\Detours-master"

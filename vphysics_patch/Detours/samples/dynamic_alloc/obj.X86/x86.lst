@@ -1,0 +1,74 @@
+Microsoft (R) Macro Assembler Version 14.32.31329.0	    11/23/22 18:45:22
+x86.asm							     Page 1 - 1
+
+
+				;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+				;;
+				;;  Detours Test Program
+				;;
+				;;  Microsoft Research Detours Package
+				;;
+				;;  Copyright (c) Microsoft Corporation.  All rights reserved.
+				;;
+				.386
+				.model flat,C
+				
+				PUBLIC CodeTemplate
+				PUBLIC CodeTemplate_End
+				
+ 00000000			_TEXT SEGMENT
+				
+ 00000000			CodeTemplate PROC
+ 00000000  90			  nop
+ 00000001  90			  nop
+ 00000002  90			  nop
+ 00000003  B8 DEADBEEF		  mov eax, 0deadbeefh
+ 00000008  90			  nop
+ 00000009  90			  nop
+ 0000000A  90			  nop
+ 0000000B  C3			  ret
+ 0000000C			CodeTemplate_End::
+ 0000000C			CodeTemplate ENDP
+				
+ 0000000C			_TEXT ENDS
+				
+				END
+Microsoft (R) Macro Assembler Version 14.32.31329.0	    11/23/22 18:45:22
+x86.asm							     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+FLAT . . . . . . . . . . . . . .	GROUP
+_DATA  . . . . . . . . . . . . .	32 Bit	 00000000 DWord	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 0000000C DWord	  Public  'CODE'	
+
+
+Procedures, parameters, and locals:
+
+                N a m e                 Type     Value    Attr
+
+CodeTemplate . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 0000000C Public C
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 00000000h   
+@DataSize  . . . . . . . . . . .	Number	 00000000h   
+@Interface . . . . . . . . . . .	Number	 00000001h   
+@Model . . . . . . . . . . . . .	Number	 00000007h   
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 FLAT
+@fardata?  . . . . . . . . . . .	Text   	 FLAT
+@fardata . . . . . . . . . . . .	Text   	 FLAT
+@stack . . . . . . . . . . . . .	Text   	 FLAT
+CodeTemplate_End . . . . . . . .	L Near	 0000000C _TEXT	Public C
+
+	   0 Warnings
+	   0 Errors
